@@ -2,7 +2,7 @@
 
  ![alt text](image.png)
 
- # This qr_code generate source code Project/qr_code.py
+ # This qr_code generate source code 
 
  ![alt text](image-1.png)
 
