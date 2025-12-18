@@ -233,6 +233,36 @@ def insertion_sort():
         arr[j + 1] = pivot   # insert pivot at correct place
         print("insertion sort", arr)
         
+        
+# --------------- heap sort ------------------
+def heap_sort():
+    global end_position
+
+    def heapify(n, i):
+        largest = i
+        left = 2 * i + 1
+        right = 2 * i + 2
+
+        if left < n and arr[left] > arr[largest]:
+            largest = left
+
+        if right < n and arr[right] > arr[largest]:
+            largest = right
+
+        if largest != i:
+            arr[i], arr[largest] = arr[largest], arr[i]
+            heapify(n, largest)
+
+    for i in range(end_position // 2 - 1, -1, -1):
+        heapify(end_position, i)
+
+    for i in range(end_position - 1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(i, 0)
+
+        print("Heap sorted array:", arr)
+    
+        
 # ---------------- MENU ----------------
 while True:
     print("\n********** MENU **********")
@@ -250,7 +280,8 @@ while True:
     print("12. Bubble sort ")
     print("13. selection sort ")
     print("14. insertion sort ")
-    print("15. Exit")
+    print("15. Heap sort ")
+    print("16. Exit")
     choice = int(input("Enter choice: "))
 
     match choice:
@@ -295,8 +326,10 @@ while True:
             selection_sort()
         case 14:
             insertion_sort()
-
         case 15:
+            heap_sort()
+
+        case 16:
             print("Exit ✅")
             break
 

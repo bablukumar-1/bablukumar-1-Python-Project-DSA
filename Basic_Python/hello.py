@@ -863,24 +863,106 @@ num=[2,1,3]  # list
 # ---------------- Super method------------
 
 
-class Car:
-    def __init__(self,type):
-        self
-        self.type=type
-    @staticmethod
-    def start():
-        print("started..")
-    @staticmethod
-    def stop():
-        print("Stoped.")
+# class Car:
+#     def __init__(self,type):
+#         self
+#         self.type=type
+#     @staticmethod
+#     def start():
+#         print("started..")
+#     @staticmethod
+#     def stop():
+#         print("Stoped.")
  
-class TyotaCar(Car):
-    def __init__(self,name,type):
-        super().__init__(type)
-        self.name=name
+# class TyotaCar(Car):
+#     def __init__(self,name,type):
+#         super().__init__(type)
+#         self.name=name
     
     
 
-car1=TyotaCar("tyota","petrol")
-# car1.start()
-print(car1.name, car1.type)
+# car1=TyotaCar("tyota","petrol")
+# # car1.start()
+# print(car1.name, car1.type)
+
+
+
+
+
+# ------------- class method
+
+# class Person:
+#     name="anonymous"
+    
+#     def changeName(self,name):
+#         self.__class__.name=name
+
+# p1=Person()
+# print(p1.changeName("bablu"))
+# print(p1.name)
+       
+       
+# ------------ Properties in Python ------------
+
+# class Student:
+#     def __init__(self,phy,che,math):
+#         self.phy=phy
+#         self.che=che
+#         self.math=math
+#         # self.percentage=str((self.math+self.phy+self.che)/3)+"%" 
+#     @property
+#     def get_percentage(self):
+#         return str((self.math+self.phy+self.che)/3)+"%"
+        
+# s1=Student(98,93,38)
+# print("Total Percentage", s1.get_percentage)
+# s1.phy=70
+# # s1.get_percentage()
+# print("Total Percentage", s1.get_percentage)
+
+
+# ------------------ Polymorphism --------------
+
+# Operator overloading : when the same operator is allowed to have different meaning according to the context
+
+# print(3+5)# add
+# print("NAME"+"BABLU")# concatenate
+# print([2,3,4,5]+[3,2,3,1]) #merge
+# print((3,2,3)+(3,4,2))
+
+
+#  cpmplex number print
+
+class ComplexNumber:
+    def __init__(self,real,img):
+        self.real=real
+        self.img=img
+    def showNumber(self):
+        print(self.real,"i +",self.img,"j")
+        print("---------------------------")
+    def __add__(self, num2):
+        newReal=self.real+num2.real
+        newImg=self.img+num2.img        
+        return ComplexNumber(newReal,newImg)
+    def __sub__(self, num2):
+        newReal=self.real-num2.real
+        newImg=self.img-num2.img
+        
+        return ComplexNumber(newReal,newImg)
+    
+    
+    
+
+num1=ComplexNumber(3,2)
+num2=ComplexNumber(10,20)
+num1.showNumber()
+num2.showNumber()
+
+# num3=num1.add(num2)
+# # print(num3)
+# num3.showNumber()
+num3=num1 + num2
+num4=num1 - num2
+# print(num3)
+# num3.showNumber()
+num4.showNumber()
