@@ -490,10 +490,10 @@ num=[2,1,3]  # list
 # f.close()
 
 
-r = open("readme.md","r")
-data = r.read()
-print(data)
-r.close()
+# r = open("readme.md","r")
+# data = r.read()
+# print(data)
+# r.close()
 
 # ------------ this is write mode file--------
 
@@ -504,7 +504,383 @@ r.close()
 
 
 #--------- append and write data in file
-f= open("readme.md","a")
-f.write("\n this is adding new line")
+# f= open("readme.md","a")
+# f.write("\n this is adding new line 1")
 
-f.close()
+# f.close()
+
+# --------- this is with statement in file handling r+ mode--------
+
+# f= open("readme.md","r+")
+# r= f.read()
+# print(r)
+
+# import os
+# with open("readme.md","r")as f:
+#     data=f.read()
+#     print(data)
+# with open("readme.md","w") as f:
+#     f.write("I ma bablu sarkar ji")
+# with open("readme.md","r")as f:
+#     data=f.read()
+#     print(data)
+# os.remove("readme.md")
+
+
+
+
+
+# ------------ Practice question based on file handling ---------
+
+# 1. create a new file "practice.txt" using python. add the following data in it 
+
+# f=open("practice.txt ","w")
+# f.write("Hi everyone\n")
+# f.write("we are learning file i/o \n")
+# f.write("using Java\n")
+# f.write(" i like programming in Python")
+
+# 2. Write a Program taht replace all occurrences of "python" and "java" in above file
+
+# with open("practice.txt","r") as f:
+#     data=f.read()
+#     print(data)
+#     new_data = data.replace("python","java")
+#     print(new_data)
+# with open("practice.txt","w") as f:
+#     f.write(new_data)
+
+# 3. Search if the word "learning" exists in the file or not
+
+# with open("practice.txt","r") as f:
+#     data=f.read()
+#     print(data)
+
+# if(data.find("learning") !=-1):
+#     print("word is found")
+# else:
+#     print("word is not found")
+
+
+# 4. Write a program in witch line of the file does the word "learning" occure first print -1 if not found
+# --------- exmaple-------
+
+# count =0
+# with open("practice.txt","r") as f:
+#     data = f.read()
+#     print(data)
+#     num=data.split(",")
+#     print(type(num))
+#     for i in num:
+#         if(int(i)%2==0):
+#             print("even")
+#             count+=1
+#         else:
+#             print("odd")
+
+# print("total even number", count)
+
+
+
+
+
+
+
+
+#  -------------- Opps in Python | Object Oriented Programming --------------
+
+# ----------- Class and Object in Python ------------
+# class Student:
+#     name="bablu Sarkar"
+#     age="21"
+#     courses="btech"
+#     specilization="Computer Science and Engineering"
+#     college="SITE"
+    
+# s1=Student()
+# print(type(s1))
+
+# ----------- Constructor in Python --------------
+
+# class Student:
+#     def __init__(self,name,age,gender):
+#         self.name=name
+#         self.age=age
+#         self.gender=gender
+
+# s1=Student("bablu Sarkar",22,"Male")
+# print(s1.name, s1.age, s1.gender)
+
+
+
+# ----------- Method in Python --------------
+# class Student:
+#     #  it is also constructor but this is default constructor
+#     def __init__(self):
+#         print("This is constructor")
+#         # Parameterized constructor
+#     def __init__(self,name,age,gender):
+#         self.name=name
+#         self.age=age
+#         self.gender=gender
+
+# s1=Student("bablu Sarkar",22,"Male")
+# print(s1.name, s1.age, s1.gender)
+
+
+
+# class Student:
+#     def __init__(self, name=None, age=None, gender=None):
+#         if name is None:
+#             print("This is default constructor")
+#         else:
+#             self.name = name
+#             self.age = age
+#             self.gender = gender
+
+# s1 = Student()
+# s2 = Student("Bablu Sarkar", 22, "Male")
+
+# print(s2.name, s2.age, s2.gender)
+
+# -------------- Class & Instance Attributes in Python --------------
+
+
+# class Student:    
+#         # Parameterized constructor
+#     def __init__(self,name,age,gender):
+#         self.name=name
+#         self.age=age
+#         self.gender=gender
+#     def hello(self):# it is also know as method
+#         print("hello Method", self.name)
+
+# s1=Student("\nbablu Sarkar",22,"Male")
+# s1.hello()
+# print(s1.name, s1.age, s1.gender)
+
+# -------------- Practice question based on OOPs in Python --------------
+
+# 1. Create a student class that takes name & marks of 3 student subject as argument in constructor then create a method to print the average.
+
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+        
+#         # self.average_marks= (english+math+hindi)/3
+#     def average_marks(self):
+#         average =0
+#         for i in (self.marks):
+#              average+=i
+#         print(average/len(self.marks))
+                 
+                 
+                 
+
+    
+# s1=Student("Bablu Sarkar",[89,90,81])
+# print("Student Name :", s1.name)
+# s1.average_marks()
+
+
+
+
+#  Static Method in Opps
+
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+        
+#         # self.average_marks= (english+math+hindi)/3
+#     def average_marks(self):
+#         average =0
+#         for i in (self.marks):
+#              average+=i
+#         print(average/len(self.marks))
+#     @staticmethod
+#     def hello():
+#         print("Hello Static Method")
+                 
+                 
+                 
+
+    
+# s1=Student("Bablu Sarkar",[89,90,81])
+# print("Student Name :", s1.name)
+# s1.average_marks()
+# s1.hello()
+
+
+
+
+
+
+
+
+
+
+# -------------Abstraction in Python --------------
+# hiding the implementation details of a class and only showing the essential features to the user
+
+# Example
+
+# class Car:
+#     def __init__(self):
+#         self.acc=False
+#         self.brk=False
+#         self.clutch=False
+#     def start(self):
+#         self.acc=True
+#         self.clutch=True
+#         print("Car started..")
+
+# c1=Car()
+# c1.start()
+
+# ---------------- Encapsulation in Python --------------
+
+# wrapping data and function inti a single unit (object)
+
+# ----- del keyword--------
+#  used to delete object properties or object itself
+
+# class Student:
+#     def __init__(self,name,gender,age):
+#         self.name=name
+#         self.age=age
+#         self.gender=gender
+
+# s1=Student("sarkar","male",22)
+# # del s1.age
+# print(s1.name,s1.age)
+        
+
+
+ #---------------- Private(like) attributes & methods---------
+ 
+#  Private attributes & methods are meant to be used only within the class and are not accessible from outside the class 
+
+# class Account:
+#     def __init__(self,acc_no,acc_pass):
+#         self.acc_no=acc_no
+#         self.__acc_pass=acc_pass
+#     def reset_password(self):
+#         print(self.__acc_pass)
+        
+# acc1= Account(23243,1234)
+# # print(acc1.acc_pass)
+# print(acc1.reset_password())
+
+
+
+
+# ------------------- Inheritance --------------------------
+
+#  When one class (child/derived) derives the properties & methods of another class (parent/base)
+
+
+# class Car:
+#     @staticmethod
+#     def start():
+#         print("Car started......")
+#     @staticmethod
+#     def stop():
+#         print("car stopped.")
+        
+# class ToyotaCar(Car):
+#     def __init__(self,name):
+#         self.name=name
+        
+# car1=ToyotaCar("Toyota")
+# car1.start()
+# print(car1.name)
+
+# ---- types of inheritance----------
+# 1. Single Inheritance-------------------
+#  class Car:
+#     @staticmethod
+#     def start():
+#         print("Car started......")
+#     @staticmethod
+#     def stop():
+#         print("car stopped.")
+        
+# class ToyotaCar(Car):
+#     def __init__(self,name):
+#         self.name=name
+        
+# car1=ToyotaCar("Toyota")
+# car1.start()
+# print(car1.name)
+
+
+
+
+# 2. Multi-level Inheritance-------------------
+
+# class Car:
+#     @staticmethod
+#     def start():
+#         print("Car started......")
+#     @staticmethod
+#     def stop():
+#         print("car stopped.")
+        
+# class ToyotaCar(Car):
+#     def __init__(self,name):
+#         self.name=name
+        
+# class Fortuner(ToyotaCar):
+#     def __init__(self,type):
+#         self.type=type
+         
+# car1=Fortuner("Petrol")
+# car1.start()
+# c2=ToyotaCar("fortuner")
+# print(c2.name,  car1.type)
+
+
+
+
+# 3. Multiple Inheritance-------------------
+
+# class A:
+#     varA="Welcome to class A"
+# class B:
+#     varB="Welcome to class B"
+# class C(A,B):
+#     varC="Welcome to class C"
+    
+# c1=C()
+# print(c1.varA)
+# print(c1.varB)
+# print(c1.varC)
+
+
+
+# ---------------- Super method------------
+
+
+class Car:
+    def __init__(self,type):
+        self
+        self.type=type
+    @staticmethod
+    def start():
+        print("started..")
+    @staticmethod
+    def stop():
+        print("Stoped.")
+ 
+class TyotaCar(Car):
+    def __init__(self,name,type):
+        super().__init__(type)
+        self.name=name
+    
+    
+
+car1=TyotaCar("tyota","petrol")
+# car1.start()
+print(car1.name, car1.type)
